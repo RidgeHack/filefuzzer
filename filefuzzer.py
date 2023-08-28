@@ -1,7 +1,6 @@
 import argparse
 import requests
 
-# ASCII art
 ascii_art = r"""
     _______ __     ______                         
    / ____(_) /__  / ____/_  __________  ___  _____
@@ -28,7 +27,7 @@ def fuzz_files(url, wordlist, file_types, display_output):
                     if display_output:
                         print(f"File found at URL: {fuzzed_url}")
             except requests.exceptions.RequestException as e:
-                pass  # Ignore errors and continue to the next URL
+                pass 
 
     return found_files
 
@@ -42,7 +41,7 @@ def download_files(found_files):
                     f.write(response.content)
                 print(f"Downloaded file: {file_name}")
         except requests.exceptions.RequestException as e:
-            pass  # Ignore errors and continue to the next URL
+            pass
 
 def main():
     parser = argparse.ArgumentParser(description="Fuzz and download files from URLs")
@@ -56,7 +55,7 @@ def main():
     args = parser.parse_args()
     file_types = args.file_types.split(',')
 
-    print(ascii_art)  # Print the ASCII art
+    print(ascii_art)
 
     found_files = fuzz_files(args.url, args.wordlist, file_types, args.display_output)
     
