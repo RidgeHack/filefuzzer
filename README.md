@@ -49,7 +49,7 @@ Downloaded file: 1.pdf
 # Installation 
 
 ```bash
-sudo git clone https://github.com/RidgeHack/filefuzzer.git
+git clone https://github.com/RidgeHack/filefuzzer.git
 ```
 
 
